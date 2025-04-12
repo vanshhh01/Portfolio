@@ -1,0 +1,105 @@
+/* Popup Container */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Image Container */
+.popup-image-container {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+/* Main Image */
+.popup-img {
+  max-height: 80vh;
+  max-width: 80vw;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+/* Navigation Arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.nav-arrow.prev {
+  left: -25px;
+}
+
+.nav-arrow.next {
+  right: -25px;
+}
+
+/* Close Button */
+.popup-close-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.popup-close-btn:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .popup-close-btn {
+    top: -15px;
+    right: -15px;
+  }
+}
